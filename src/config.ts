@@ -1,6 +1,6 @@
 export const CONFIG = {
   nave: {
-    velocidade: 8,             
+    velocidade: 20,             
     suavizacaoMovimento: 0.15, 
     suavizacaoInclinacao: 0.1, 
     limiteX: 6,                
