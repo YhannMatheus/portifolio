@@ -79,7 +79,6 @@ function Meteoro() {
           tiro.ativo = false; 
           resetarPosicao();   
           
-          // MUDANÇA AQUI: Destruir asteroide dá pontos agora
           ESTADO_JOGO.pontos += 100; 
           break; 
         }

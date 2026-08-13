@@ -9,13 +9,11 @@ export default function Nave() {
   const [, getTeclas] = useKeyboardControls();
   const velocidade = CONFIG.nave.velocidade;
   
-  // Timer para evitar que a nave atire como uma metralhadora descontrolada
   const cooldownRef = useRef(0); 
 
   useFrame((_state, delta) => {
     if (!naveRef.current || ESTADO_JOGO.gameOver) return;
 
-    // Lemos a tecla de atirar
     const { frente, tras, esquerda, direita, atirar } = getTeclas();
 
     let alvoX = naveRef.current.position.x;
@@ -46,13 +44,12 @@ export default function Nave() {
     if (atirar && cooldownRef.current <= 0) {
       cooldownRef.current = CONFIG.arma.cooldown;
       
-      // Procura o primeiro tiro que não está ativo na tela
       const tiroLivre = ESTADO_JOGO.tiros.find(t => !t.ativo);
       if (tiroLivre) {
         tiroLivre.ativo = true;
         tiroLivre.x = naveRef.current.position.x;
         tiroLivre.y = naveRef.current.position.y;
-        tiroLivre.z = naveRef.current.position.z; // Sai do bico da nave
+        tiroLivre.z = naveRef.current.position.z;
       }
     }
   });

@@ -26,7 +26,7 @@ export const CONFIG = {
 
 export const ESTADO_JOGO = {
   distancia: 0,
-  pontos: 0, // NOVO: Contador de pontos por destruição
+  pontos: 0,
   velocidadeAtual: CONFIG.mundo.velocidadeInicial,
   gameOver: false,
   posicaoNave: { x: 0, y: 0 }, 
