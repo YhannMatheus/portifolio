@@ -39,6 +39,21 @@ export default function TerminalScreen({ onStartGame }: TerminalScreenProps) {
           Iniciar Simulação
         </button>
       )}
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
+        <a href="mailto:yhann.mendes@outlook.com" className="text-sm text-[#03e43f]">
+          yhann.mendes@outlook.com
+        </a>
+        <a href="mailto:yhann.mendes@icen.ufpa.br" className="mx-4 text-sm text-[#03e43f]">
+          yhann.mendes@icen.ufpa.br
+        </a>
+
+        <a href="https://github.com/YhannMatheus" className="text-sm text-[#03e43f]">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/yhannmatheus/" className="text-sm text-[#03e43f]">
+          LinkedIn
+        </a>
+      </div>
     </div>
   );
 }
