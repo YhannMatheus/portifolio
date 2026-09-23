@@ -30,5 +30,7 @@ export const ESTADO_JOGO = {
   velocidadeAtual: CONFIG.mundo.velocidadeInicial,
   gameOver: false,
   posicaoNave: { x: 0, y: 0 }, 
+  controle: { x: 0, y: 0, atirar: false }, // Entrada dos controles de toque (eixos de -1 a 1)
+  limites: { x: CONFIG.nave.limiteX, y: CONFIG.nave.limiteY }, // Ajustado conforme a tela
   tiros: Array.from({ length: 10 }, () => ({ x: 0, y: 0, z: 0, ativo: false }))
 };

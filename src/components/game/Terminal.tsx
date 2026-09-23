@@ -23,11 +23,11 @@ export default function TerminalScreen({ onStartGame }: TerminalScreenProps) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen bg-[#050505] text-[#03e43f] font-mono p-4">
+    <div className="flex flex-col items-center justify-center h-dvh w-full bg-[#050505] text-[#03e43f] font-mono p-4">
       <div className="text-2xl font-mono mb-4">
         Bem Vindo
       </div>
-      <div className="max-w-2xl text-xl md:text-2xl min-h-25 text-center mb-8">
+      <div className="max-w-2xl text-lg md:text-2xl min-h-25 text-center mb-8">
         {textoExibido}
         <span className="animate-pulse">_</span>
       </div>
@@ -39,7 +39,7 @@ export default function TerminalScreen({ onStartGame }: TerminalScreenProps) {
           Iniciar Simulação
         </button>
       )}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
+      <div className="absolute bottom-[calc(env(safe-area-inset-bottom)+0.5rem)] left-1/2 transform -translate-x-1/2 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
         <a href="mailto:yhann.mendes@outlook.com" className="text-sm text-[#03e43f]">
           yhann.mendes@outlook.com
         </a>

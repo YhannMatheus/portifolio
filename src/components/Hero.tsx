@@ -5,6 +5,7 @@ import Nave from './game/Sheep';
 import TerminalScreen from './game/Terminal';
 import Cenario from './game/Cenario';
 import Hud from './game/Hud';
+import AjusteCamera from './game/Camera';
 import { ESTADO_JOGO, CONFIG } from '../config';
 
 export default function Hero() {
@@ -17,6 +18,7 @@ export default function Hero() {
     ESTADO_JOGO.velocidadeAtual = CONFIG.mundo.velocidadeInicial;
     ESTADO_JOGO.gameOver = false;
     
+    ESTADO_JOGO.controle = { x: 0, y: 0, atirar: false };
     ESTADO_JOGO.tiros.forEach(tiro => tiro.ativo = false);
     
     setResetKey(chaveAntiga => chaveAntiga + 1);
@@ -32,7 +34,7 @@ export default function Hero() {
       {!jogoIniciado ? (
         <TerminalScreen onStartGame={iniciarJogo} />
       ) : (
-        <div className="w-screen h-screen bg-[#050505] relative">
+        <div className="w-full h-dvh bg-[#050505] relative touch-none select-none">
           
           <KeyboardControls
             map={[
@@ -47,6 +49,7 @@ export default function Hero() {
               <ambientLight intensity={0.5} />
               <directionalLight position={[10, 10, 10]} intensity={2} />
               
+              <AjusteCamera />
               <Cenario />
               <Nave />
               

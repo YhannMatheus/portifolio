@@ -49,7 +49,7 @@ function Meteoro() {
     );
   };
 
-  useFrame((_state, delta) => {
+  useFrame((state, delta) => {
     if (!meteoroRef.current || ESTADO_JOGO.gameOver) return;
 
     meteoroRef.current.position.z += ESTADO_JOGO.velocidadeAtual * delta;
@@ -85,7 +85,8 @@ function Meteoro() {
       }
     }
 
-    if (meteoroRef.current.position.z > 5) resetarPosicao();
+    // Só recicla depois de passar pela câmera (que se afasta em telas estreitas)
+    if (meteoroRef.current.position.z > state.camera.position.z) resetarPosicao();
   });
 
   return (
